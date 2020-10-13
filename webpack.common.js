@@ -63,7 +63,7 @@ module.exports = {
             },
 
             {
-                test: /\.(woff|woff2|ttf|eot|svg)(\?v=[a-z0-9]\.[a-z0-9]\.[a-z0-9])?$/,
+                test: /\.(woff|woff2|ttf|otf|eot|svg)(\?v=[a-z0-9]\.[a-z0-9]\.[a-z0-9])?$/,
                 loader: "url-loader?name=assets/fonts/[name].[ext]",
             },
             {

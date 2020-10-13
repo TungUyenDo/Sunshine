@@ -3,8 +3,23 @@
 @import '../assets/fonts/UTM_centur_italic/UTMCenturItalic.css';
 @import '../assets/fonts/UTM_centur_regular/UTMCentur.css';
 
-// font family
 $UTMCentur: "UTMCentur";
 $UTMCenturBold: "UTMCenturBold";
 $UTMCenturItalic: "UTMCenturItalic";
 $UTMCenturBoldItalic: "UTMCenturBoldItalic";
+
+///
+
+@import '../assets/fonts/SVN-Gotham-Black/styles.css';
+@import '../assets/fonts/SVN-Gotham-Bold/styles.css';
+@import '../assets/fonts/SVN-Gotham-Book/styles.css';
+@import '../assets/fonts/SVN-Gotham-Italic/styles.css';
+@import '../assets/fonts/SVN-Gotham-Light/styles.css';
+@import '../assets/fonts/SVN-Gotham-Regular/styles.css';
+
+$SVN-Gotham-Black: "SVN-Gotham-Black";
+$SVN-Gotham-Bold: "SVN-Gotham-Bold";
+$SVN-Gotham-Italic: "SVN-Gotham-Italic";
+$SVN-Gotham-Light: "SVN-Gotham-Light";
+$SVN-Gotham-Regular: "SVN-Gotham";
+$SVN-Gotham-Book: "SVN-Gotham-Book";

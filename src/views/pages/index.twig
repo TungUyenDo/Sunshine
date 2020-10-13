@@ -3,8 +3,176 @@
 
 {% block content %}
 
-<div class="container">
-    test
+
+<div class="menu">
+    <div class="menu__dots">
+        <span class="menu__dots_text">Trang chủ</span>
+        <ul class="menu__dots_circle">
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <div class="menu__text">
+        <a href="#" class="menu__text_logo">
+            <img src="../../assets/images/logo.png" alt="">
+        </a>
+        {# active #}
+        <div class="menu__text_toggle">
+            <span class="text">
+                menu
+            </span>
+            <div class="lines">
+                <span class="line line_1"></span>
+                <span class="line line_2"></span>
+                <span class="line line_3"></span>
+            </div>
+        </div>
+    </div>
 </div>
+
+<div class="menu__absolute">
+    <a href="#" class="active">Trang chủ</a>
+    <a href="#">Vị trí </a>
+    <a href="#">Tiện ích</a>
+    <a href="#">Mặt bằng tầng</a>
+    <a href="#">CSBH</a>
+</div>
+
+
+<section class="block1">
+    <div class="block1__container">
+        <figure class="block1__heading">
+            <img src="../../assets/images/block1_title.png" alt="block 1 heading">
+        </figure>
+        <form class="form" action="">
+            <div class="block1__title">
+                ĐĂNG KÝ TẠI ĐÂY <br>ĐỂ NHẬN TƯ VẤN VÀ BÁO GIÁ
+            </div>
+
+            <div class="block1__form">
+                <div class="block1__form-group wow fadeInUp">
+                    <input class="block1__form-control block1Name" name="name" type="text" placeholder="Họ và tên">
+                </div>
+                <div class="block1__form-group wow fadeInUp">
+                    <input class="block1__form-control block1Phone" name="phone" type="text"
+                        placeholder="Số điện thoại">
+                </div>
+                <div class="block1__form-group wow fadeInUp">
+                    <input class="block1__form-control block1Email" name="email" type="text" placeholder="Email">
+                </div>
+                <div class="block1__form-group wow fadeInUp">
+                    <input class="block1__form-control block1Note" name="note" type="text"
+                        placeholder="Ghi chú yêu cầu">
+                </div>
+                <div class="block1__form-button text-center wow fadeInUp">
+                    <button class="btn-submit" type="submit" disabled="disabled">
+                        Đăng ký
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+
+<section class="block_intro">
+    <div class="block_intro__container">
+        <div class="text">
+            “SUNSHINE CIPUTRA <br>
+            Một biểu tượng mới của Hà Nội <br>
+            Một khu đô thị đáng sống và đẳng <br> cấp nhất Hà Nội"
+        </div>
+        <button class="btn-arrow">đăng ký trải nghiệm</button>
+    </div>
+
+</section>
+
+<section class="block2">
+    <div class="block2__container">
+
+    </div>
+</section>
+
+<section class="block3">
+    <div class="block3__container">
+
+    </div>
+</section>
+
+<section class="block4">
+    <div class="block4__container">
+
+    </div>
+</section>
+
+<section class="block11">
+    <div class="block11__container">
+        <div class="block11__content">
+            <div class="block11__left">
+                <div class="block11__logo-list">
+                    <div class="block11__logo"><img src="/assets/temp/5926051a7778377e9614155308e411c0_1598193596.jpg">
+                    </div>
+                </div>
+                <div class="block11__contact">
+                    <div><strong>Địa Chỉ Dự Án: </strong>Đường Đào Trí, Quận 7, T.p Hồ Chí Minh</div>
+                    <div>Email: <a
+                            href="mailto:replydiamondriver@sunshinegroup.vn">replydiamondriver@sunshinegroup.vn</a><br>
+                        Hotline:<a href="tel:0931 222 279"> 0931 222 279</a></div>
+                </div>
+                <div class="block11__address">
+                    <div class="block11__address-item">
+                        <div><strong>Tại Hà Nội:</strong></div>
+
+                        <div>Tòa nhà Sunshine Center<br>
+                            Số 16, Đường Phạm Hùng,<br>
+                            Quận Nam Từ Liêm, Hà Nội</div>
+
+                    </div>
+                    <div class="block11__address-item">
+                        <div><strong>Tại Hồ Chí Minh:</strong></div>
+
+                        <div>Tầng 18, Tòa nhà Deutches Haus,<br>
+                            33 Lê Duẩn, Phường Bến Nghé,<br>
+                            Quận 1, Thành phố Hồ Chí Minh</div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="block11__right">
+                <div class="block11__right-title">Tư vấn 24/7 hãy liên hệ ngay</div>
+                <form method="POST">
+
+                    <div class="block11__form">
+                        <div class="block11__form-group">
+                            <input class="block11__form-control block11Name" name="name" type="text"
+                                placeholder="Họ và tên">
+                        </div>
+                        <div class="block11__form-group">
+                            <input class="block11__form-control block11Email" name="email" type="text"
+                                placeholder="Email">
+                        </div>
+                        <div class="block11__form-group">
+                            <input class="block11__form-control block11Phone" name="phone" type="text"
+                                placeholder="Số điện thoại">
+                        </div>
+                        <div class="block11__form-group">
+                            <input class="block11__form-control block11Note" name="note" type="text"
+                                placeholder="Ghi chú nhu cầu">
+                        </div>
+                        <div class="block11__button">
+                            <button class="submit-form" type="submit" disabled="disabled">
+                                Đăng ký
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
 
 {% endblock %}
