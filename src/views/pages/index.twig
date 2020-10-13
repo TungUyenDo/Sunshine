@@ -1,0 +1,90 @@
+{% set page_title = 'Menu' %}
+{% extends "../elements/_base.twig" %}
+
+{% block content %}
+
+    <div class="container" style="margin-top: 70px; margin-bottom: 70px;">
+        <h3>All Pages</h3>
+        <ul class="menu">
+            {% set menu = [
+                {link: "Element" } ,
+                {link: "01_01_LOGIN" },
+                {link: "01_04_FORGOT_PASSWORD" },
+                {link: "01_05_FORGOT_PASSWORD" },
+                {link: "01_06_FORGOT_PASSWORD" },
+                {link: "02_01_FACE" },
+                {link: "02_02_FACE" } ,
+                {link: "02_03_FACE_INFO_USER" } ,
+                {link: "02_04_FACE_INFO_USER_EDIT" } ,
+                {link: "05_01_RECOGNITION_PERSON" } ,
+                {link: "05_02_RECOGNITION_PERSON" } ,
+                {link: "05_04_RECOGNITION_PERSON" } ,
+                {link: "07_01_LIST_USER" } ,
+                {link: "07_02_CREATE_USER" } ,
+                {link: "09_01_CAMERA_ONE" } ,
+                {link: "09_02_CAMERA" } ,
+                {link: "09_03_CAMERA_LIST" } ,
+                {link: "09_07_02_CAMERA_ADD" } ,
+                {link: "10_01_MAP_CAMERA" } ,
+                {link: "11_01_04_ACC_ADMIN" } ,
+                {link: "11_01_05_ACC_NEW" } ,
+            ] %}
+            {% for link in menu %}
+                <li>
+                    <a target="_blank" href="{{ link.link }}.html">{{ link.link }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <style>
+        .menu {
+            padding: 20px 30px;
+            margin: 0;
+            list-style: none;
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .menu li {
+            margin: 10px 0;
+            padding-left: 25px;
+            position: relative;
+            width: 30%;
+        }
+
+        .menu li::before {
+            background-color: rgb(226, 184, 76);
+            position: absolute;
+            content: '';
+            width: 10px;
+            height: 10px;
+            left: 3px;
+            top: 6px;
+        }
+
+        .menu li::after {
+            border: #e3ba54 1px solid;
+            background: #fff;
+            position: absolute;
+            content: '';
+            width: 9px;
+            height: 9px;
+            left: 0;
+            top: 5px;
+        }
+
+        .menu a {
+            color: #000;
+            font-weight: 500;
+            cursor: pointer;
+            position: relative;
+            font-size: 16px;
+        }
+
+        .menu a:hover {
+            color: #6d30ab;
+        }
+    </style>
+{% endblock %}
+
