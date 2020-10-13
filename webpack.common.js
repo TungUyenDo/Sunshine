@@ -6,9 +6,6 @@ const {
     CleanWebpackPlugin
 } = require("clean-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
-const HtmlBeautifyPlugin = require("html-beautify-webpack-plugin");
-const fs = require("fs");
-const sass = require("node-sass");
 const globImporter = require("node-sass-glob-importer");
 
 const generateHtmlPlugins = () =>
