@@ -13,8 +13,24 @@ var MainScript = (function () {
     var _init = function () {
         self.Block1ValidateForm();
         self.Block5ValidateForm();
+        self.Block2();
+        self.Menu();
+        self.OPENMENU();
     }
-    var _resize = function () {}
+    var _resize = function () { }
+
+    this.Block2 = function () {
+        if ($(".block2__slider").length === 0) {
+            return false
+        }
+
+        $(".block2__slider").slick({
+            arrows: true,
+            dots: false,
+            autoplay: false,
+            autoplaySpeed: 3000
+        });
+    }
 
     this.Block1ValidateForm = function () {
         var form = [{
@@ -35,7 +51,8 @@ var MainScript = (function () {
         var $submit = ".block1__form-button button";
         validateForm($submit, form);
     }
-    this.block5ValidateForm = function () {
+
+    this.Block5ValidateForm = function () {
         var form = [{
             name: '.block5Name',
             validators: ['required'],
@@ -52,6 +69,65 @@ var MainScript = (function () {
         validateForm($submit, form);
     }
 
+    this.Menu = function () {
+        $('.menu__absolute a').click(function (e) {
+            e.preventDefault();
+
+            $('.menu__absolute a').removeClass('active');
+            if ($(this).hasClass('active')) {
+                $(this).removeClass('active')
+            } else {
+                $(this).addClass('active')
+            }
+
+            // $('.menu__dots_circle a').removeClass('active');
+            // $('.menu__dots_circle a[link="' + $(this).attr('link') + '"]').addClass('active')
+
+            let name = $(this).attr('name');
+            $('.menu__dots_text').text(name)
+
+
+            goToByScroll($(this).attr('link'));
+        })
+
+
+        $('.menu__dots_circle a').click(function (e) {
+            e.preventDefault();
+
+            $('.menu__dots_circle a').removeClass('active');
+            if ($(this).hasClass('active')) {
+                $(this).removeClass('active')
+            } else {
+                $(this).addClass('active')
+            }
+
+            $('.menu__absolute a').removeClass('active');
+            $('.menu__absolute a[link="' + $(this).attr('link') + '"]').addClass('active')
+
+            let name = $(this).attr('name');
+            $('.menu__dots_text').text(name)
+
+            goToByScroll($(this).attr('link'));
+        })
+
+        function goToByScroll(echo) {
+            $('html,body').animate({
+                scrollTop: $("." + echo).offset().top
+            }, 'slow');
+        }
+    }
+
+    this.OPENMENU = function () {
+        $('.menu__text').click(function () {
+            if ($('.menu__text_toggle').hasClass('active')) {
+                $('.menu__text_toggle').removeClass('active')
+                $('.menu__absolute').removeClass('active')
+            } else {
+                $('.menu__text_toggle').addClass('active')
+                $('.menu__absolute').addClass('active')
+            }
+        })
+    }
 
 
     /**
@@ -139,4 +215,34 @@ $(window).on("load", function () {
 
 $(window).on("resize", function () {
     mainScript.resize();
+});
+
+var sections = $('section')
+    , nav = $('.menu__dots_circle')
+    , nav_text = $('.menu__absolute')
+    , nav_height = nav.outerHeight();
+
+$(window).on('scroll', function () {
+    var cur_pos = $(this).scrollTop();
+
+    sections.each(function () {
+        var top = $(this).offset().top - nav_height,
+            bottom = top + $(this).outerHeight();
+
+        if (cur_pos >= top && cur_pos <= bottom) {
+            nav.find('a').removeClass('active');
+            nav_text.find('a').removeClass('active');
+            sections.removeClass('active');
+
+            $(this).addClass('active');
+            nav.find('a[href="#' + $(this).attr('id') + '"]').addClass('active');
+            nav_text.find('a[href="#' + $(this).attr('id') + '"]').addClass('active');
+        
+            let id = $(this).attr('id');
+            let value = $('.menu__dots_circle a[link="'+ id +'"]').attr('name')
+
+            $('.menu__dots_text').text(value)
+
+        }
+    });
 });
