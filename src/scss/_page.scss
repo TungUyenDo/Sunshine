@@ -18,9 +18,72 @@ img {
 button {
     outline: none;
     box-shadow: none;
+
     &:focus {
         outline: none;
         box-shadow: none;
+    }
+}
+
+.social {
+    @include flexbox;
+    @include flex-direction(column);
+    position: fixed;
+    z-index: 3;
+    left: 1.302vw;
+    bottom: 1.302vw;
+
+    @media (max-width: 767px) {
+        left: 35px;
+        bottom: 35px;
+    }
+
+    &__item {
+        @include flex_center;
+        border-radius: 50%;
+        width: 4.167vw;
+        height: 4.167vw;
+        margin: 0.625vw 0;
+        background-position: center center;
+        background-size: cover;
+        background-image: url('../assets/images/social_bg.png');
+
+        @media (max-width: 767px) {
+            width: 12vw;
+            height: 12vw;
+            margin: 4px;
+        }
+
+        &:hover {
+            img {
+                @include transform(scale(0.85))
+            }
+        }
+
+        img {
+            width: 100%;
+            @include transition(all 0.3s ease);
+        }
+    }
+
+    .yt {
+        img {
+            width: 2.344vw;
+
+            @media (max-width: 767px) {
+                width: 6.344vw;
+            }
+        }
+    }
+
+    .fb {
+        img {
+            width: 1.302vw;
+
+            @media (max-width: 767px) {
+                width: 3.302vw;
+            }
+        }
     }
 }
 
@@ -33,6 +96,7 @@ button {
             padding-left: 2.5vw;
             font-size: 3.5vw;
         }
+
         @mixin placeholder {
             color: #000;
             font-family: $SVN-Gotham-Book;
@@ -42,14 +106,17 @@ button {
             /* Chrome/Opera/Safari */
             @include placeholder;
         }
+
         &::-moz-placeholder {
             /* Firefox 19+ */
             @include placeholder;
         }
+
         &:-ms-input-placeholder {
             /* IE 10+ */
             @include placeholder;
         }
+
         &:-moz-placeholder {
             /* Firefox 18- */
             @include placeholder;
@@ -58,7 +125,7 @@ button {
 }
 
 .btn-submit {
-    background-image: url(../assets/images/btn-submit-yellow.png);
+    background-image: url('../assets/images/btn-submit-yellow.png');
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position-x: -1px;
@@ -86,8 +153,13 @@ button {
         height: 9vw;
         width: 39vw;
     }
+
+    &[disabled="disabled"] {
+        cursor: not-allowed;
+    }
+
     &:hover {
-        background-image: url(../assets/images/btn-submit-white.png);
+        background-image: url('../assets/images/btn-submit-white.png');
     }
 }
 
@@ -109,6 +181,7 @@ button {
     position: relative;
     outline: none;
     font-weight: bold;
+
     &::before {
         position: absolute;
         content: "";
@@ -122,13 +195,16 @@ button {
         background-image: url("../assets/images/btn_arrow_yellow.png");
         background-position: right;
         background-size: contain;
+
         @media (max-width: 767px) {
             width: 7vw;
             background-size: 8vw;
         }
     }
+
     &:hover {
         color: #fff;
+
         &::before {
             background-image: url("../assets/images/btn_arrow_white.png");
         }
@@ -140,10 +216,12 @@ button {
     width: 27.083vw;
     margin: 0 auto;
     text-align: center;
+
     * {
         display: inline-block;
         color: #bb9348;
     }
+
     span {
         font-size: 70px;
         font-size: 3.646vw;
@@ -152,18 +230,22 @@ button {
         @include flexbox;
         @include flex-direction(column);
         text-align: left;
+
         &:nth-child(1) {
             padding-left: 40px;
             padding-left: 2.083vw;
         }
+
         &:nth-child(2) {
             padding-left: 95px;
             padding-left: 4.948vw;
         }
+
         @media (max-width: 767px) {
             font-size: 8.646vw;
         }
     }
+
     i {
         font-size: 32px;
         padding-top: 2px;
@@ -172,10 +254,12 @@ button {
         font-family: $UTMCenturBold;
         text-transform: uppercase;
         font-style: normal;
+
         @media (max-width: 767px) {
             font-size: 3.667vw;
         }
     }
+
     &__top {
         line-height: normal;
     }
@@ -191,17 +275,20 @@ button {
     padding: 1.04167vw;
     background: rgba(255, 255, 255, 0.8);
     display: none;
+
     &.active {
         display: block;
     }
-    &__content {
-    }
+
+    &__content {}
+
     &__title {
         font-size: 1.65vw;
         color: #3f4d6e;
         text-align: center;
         font-family: $SVN-Gotham-Bold;
     }
+
     .btn-submit {
         margin-top: 1vw;
     }
@@ -220,11 +307,13 @@ button {
     @include transition(all 0.3s ease);
     @include flex_center;
     @include transform(translate(-50%, -50%));
+
     &.active {
         z-index: 999;
         visibility: visible;
         opacity: 1;
     }
+
     img {
         position: absolute;
         width: 100%;
@@ -232,6 +321,7 @@ button {
         top: 50%;
         left: 50%;
         @include transform(translate(-50%, -50%));
+
         @media (max-width: 767px) {
             width: 30vw;
         }
@@ -261,11 +351,12 @@ button {
         content: "";
         width: 50%;
         height: 100%;
-        background-image: url(../assets/images/menu_bg.png);
+        background-image: url('../assets/images/menu_bg.png');
         background-size: 100% auto;
         background-position: right center;
         position: absolute;
         right: 0;
+
         @media (max-width: 767px) {
             width: 100%;
         }
@@ -277,6 +368,7 @@ button {
         @include align-items(center);
         z-index: 1;
     }
+
     &__dots {
         @media (max-width: 767px) {
             display: none;
@@ -305,6 +397,7 @@ button {
             cursor: pointer;
             display: block;
             border-radius: 50%;
+
             &.active,
             &:hover {
                 background-color: $color_yellow;
@@ -318,6 +411,7 @@ button {
         display: block;
         // margin: 0 20px;
         margin: 0 1.042vw;
+
         @media (max-width: 767px) {
             width: 9vw;
             margin: 0px 2.042vw;
@@ -337,6 +431,7 @@ button {
             font-size: 12px;
             font-size: 0.625vw;
             letter-spacing: 1px;
+
             @media (max-width: 767px) {
                 font-size: 3.5vw;
                 margin-right: 1vw;
@@ -346,9 +441,11 @@ button {
         .lines {
             @include flexbox;
             @include flex-direction(column);
+
             @media (max-width: 767px) {
                 margin-top: 0.2vw;
             }
+
             .line {
                 background-color: #e1eaf3;
                 height: 0.104vw;
@@ -364,6 +461,7 @@ button {
                     width: 5.625vw;
                     margin-bottom: 0.5vw;
                 }
+
                 &:last-child {
                     margin-bottom: 0;
                 }
@@ -382,6 +480,7 @@ button {
 
             .line_1 {
                 @include transform(rotate(45deg) translateY(0.104vw) translateX(0.052vw));
+
                 // @include transform(rotate(45deg) translateY(2px) translateX(1px));
                 @media (max-width: 767px) {
                     @include transform(rotate(45deg) translateY(0.55vw) translateX(0.75vw));
@@ -407,6 +506,7 @@ button {
         visibility: hidden;
         opacity: 0;
         transition: all 0.3s ease;
+
         @media (max-width: 767px) {
             width: 70%;
             height: 100% !important;
@@ -416,6 +516,7 @@ button {
             @include flexbox;
             @include flex-direction(column);
         }
+
         &.active {
             opacity: 1;
             visibility: visible;
@@ -423,16 +524,18 @@ button {
             padding-top: 1.563vw;
             padding-bottom: 1.563vw;
         }
+
         &::before {
             content: "";
             width: 50%;
             height: 100%;
-            background-image: url(../assets/images/menu_bg.png);
+            background-image: url('../assets/images/menu_bg.png');
             background-size: 100% auto;
             background-position: right center;
             position: absolute;
             right: 0;
             top: 0;
+
             @media (max-width: 767px) {
                 display: none;
             }
@@ -448,10 +551,12 @@ button {
             text-decoration: none;
             z-index: 1;
             @include transition(all 0.3s ease);
+
             @media (max-width: 767px) {
                 font-size: 4.5vw;
                 margin: 2vw 0;
             }
+
             &.active,
             &:hover {
                 position: relative;
@@ -468,6 +573,7 @@ button {
                     left: 50%;
                     background-color: $color_yellow;
                     @include transform(translateX(-50%));
+
                     @media (max-width: 767px) {
                         display: none;
                     }
@@ -481,22 +587,25 @@ button {
     position: relative;
     height: 56.25vw;
     width: 100%;
-    background: url(../assets/images/block1_bg.jpg);
+    background: url('../assets/images/block1_bg.jpg');
     background-size: 100% 100%;
+
     @media (max-width: 767px) {
         background-size: 100% auto;
         background-repeat: no-repeat;
         padding-top: 53vw;
         height: auto;
     }
+
     &__container {
         position: absolute;
         // left: 140px;
         // top: 100px;
         // max-width: 610px;
         left: 7.292vw;
-        top: 5.208vw;
+        top: 3.208vw;
         width: 31.771vw;
+
         @media (max-width: 767px) {
             position: static;
             width: 100%;
@@ -508,7 +617,7 @@ button {
     }
 
     &__heading {
-        width: 28.125vw;
+        width: 24.125vw;
         margin: 0 auto;
 
         @media (max-width: 767px) {
@@ -536,6 +645,7 @@ button {
     &__form-group {
         margin-bottom: 15px;
         margin-bottom: 0.781vw;
+
         @media (max-width: 767px) {
             margin-bottom: 2.302vw;
         }
@@ -559,6 +669,7 @@ button {
     .form {
         width: 28.125vw;
         margin: 0 auto;
+
         @media (max-width: 767px) {
             width: 80vw;
         }
@@ -569,13 +680,15 @@ button {
     height: 37.865vw;
     position: relative;
     width: 100%;
-    background: url(../assets/images/block_intro.jpg);
+    background: url('../assets/images/block_intro.jpg');
     background-size: 100% 100%;
     background-repeat: no-repeat;
     margin-bottom: -1vw;
+
     @media (max-width: 767px) {
         height: 67.865vw;
     }
+
     &__container {
         position: absolute;
         top: 50%;
@@ -590,13 +703,16 @@ button {
         font-family: $UTMCentur;
         // font-size: 42px;
         font-size: 2.188vw;
+
         @media (max-width: 767px) {
             font-size: 5vw;
         }
     }
+
     .btn-arrow {
         // margin-top: 10px;
         margin-top: 0.521vw;
+
         @media (max-width: 767px) {
             font-size: 4.7vw;
             margin-top: 3vw;
@@ -612,72 +728,89 @@ button {
     // height: 128.229vw;
     position: relative;
     width: 100%;
-    background: url(../assets/images/block2_bg.jpg);
+    background: url('../assets/images/block2_bg.jpg');
     background-size: 100% 100%;
     color: #e1eaf3;
     font-family: $SVN-Gotham-Book;
+
     @media (max-width: 767px) {
         height: 100%;
         font-size: 3.5vw;
     }
+
     &__container {
         @media (max-width: 767px) {
             width: 80vw;
             margin: 0 auto;
         }
     }
+
     &__2side {
         @include flexbox;
         @include justify-content(space-between);
         // margin-top: 40px;
         margin-top: 2.083vw;
+
         @media (max-width: 767px) {
             @include flex-direction(column);
         }
+
         &--wrap {
             // width: calc(50% - 24px);
             width: calc(50% - 1.25vw);
+
             *:not(img) {
                 line-height: normal;
             }
+
             @media (max-width: 767px) {
                 width: 100%;
             }
         }
+
         .image {
             // margin-top: 40px;
             // margin-bottom: 45px;
             margin-top: 2.083vw;
             margin-bottom: 2.344vw;
+
             img {
                 width: 100% !important;
             }
         }
+
         .left {
             text-align: right;
+
             @media (max-width: 767px) {
                 text-align: left;
             }
+
             *:not(img) {
                 // margin-left: 150px;
                 margin-left: 7.813vw;
+
                 @media (max-width: 767px) {
                     margin: 0;
                     margin-bottom: 2vw;
                 }
             }
         }
+
         .right {
             // margin-top: 70px;
             margin-top: 3.646vw;
             text-align: left;
+
             * {
                 // padding-right: 150px;
                 padding-right: 7.813vw;
+
                 @media (max-width: 767px) {
                     padding: 0;
                 }
             }
+
             .btn-submit {
                 margin-top: 30px;
                 margin-bottom: 50px;
@@ -685,15 +818,18 @@ button {
                 margin-bottom: 2.604vw;
             }
         }
+
         ul {
             list-style: none;
             padding: 0;
+
             li {
                 position: relative;
                 // margin-bottom: 8px;
                 // padding-left: 36px;
                 margin-bottom: 0.417vw;
                 padding-left: 1.875vw;
+
                 &::before {
                     position: absolute;
                     content: "";
@@ -711,6 +847,7 @@ button {
             }
         }
     }
+
     &__slider {
         margin: 0 auto;
         // width: calc(100% - 300px);
@@ -721,9 +858,11 @@ button {
         @media (max-width: 767px) {
             width: 80vw;
         }
+
         .item {
             position: relative;
         }
+
         .text {
             display: block;
             position: absolute;
@@ -740,42 +879,51 @@ button {
                 padding: 1vw 4vw;
             }
         }
+
         .slick-arrow {
             background-repeat: no-repeat;
             background-size: cover;
             // width: 125px;
             // height: 125px;
-            width: 6.51vw;
-            height: 6.51vw;
+            width: 5.7vw;
+            height: 5.7vw;
             z-index: 1;
+
             &::before {
                 display: none;
             }
         }
+
         .slick-prev {
             // left: -80px;
             left: -4.167vw;
             background-image: url("../assets/images/arrow_white_left.png");
+
             &:hover {
                 background-image: url("../assets/images/arrow_yellow_left.png");
             }
         }
+
         .slick-next {
             // right: -80px;
             right: -4.167vw;
             background-image: url("../assets/images/arrow_white_right.png");
+
             &:hover {
                 background-image: url("../assets/images/arrow_yellow_right.png");
             }
         }
     }
+
     .btn-arrow {
         // margin-top: 50px;
         margin-top: 2.604vw;
         text-align: center;
     }
+
     .big_heading {
         width: 100%;
+
         @media (max-width: 767px) {
             @include flexbox;
             @include flex-direction(column);
@@ -791,17 +939,20 @@ button {
     height: 44.906vw;
     position: relative;
     width: 100%;
-    background: url(../assets/images/block3_bg.jpg);
+    background: url('../assets/images/block3_bg.jpg');
     background-size: 100% 100%;
+
     @media (max-width: 767px) {
         height: auto;
         padding-bottom: 5vw;
     }
+
     &__container {
         margin: 0 auto;
         // width: calc(100% - 300px);
         width: calc(100% - 15.625vw);
     }
+
     .big_heading {
         @include flexbox;
         @include flex-direction(row);
@@ -812,17 +963,21 @@ button {
         @media (max-width: 767px) {
             @include flex-direction(column);
         }
+
         &__top {
             width: 27.083vw;
+
             @media (max-width: 767px) {
                 width: 100%;
             }
         }
+
         span {
             &:nth-child(1) {
                 padding-left: 0;
             }
         }
+
         i {
             margin-bottom: 0.26vw;
             margin-left: 1.042vw;
@@ -830,6 +985,7 @@ button {
             // margin-left: 20px;
         }
     }
+
     &__content {
         @include flexbox;
         @include justify-content(flex-end);
@@ -843,24 +999,28 @@ button {
             margin-left: 0;
             margin-top: 7vw;
         }
+
         &--item {
             // width: calc((100% / 3) - 80px);
             // margin: 0 40px;
             width: calc((100% / 3) - 4.167vw);
             margin: 0 2.083vw;
             text-align: right;
+
             @media (max-width: 767px) {
                 width: 85%;
                 margin: 0 auto;
                 text-align: left;
                 margin-bottom: 3vw;
             }
+
             .title {
                 line-height: normal;
                 @include flexbox;
                 @include align-items(flex-end);
                 @include justify-content(space-between);
             }
+
             .no {
                 color: #bb9348;
                 font-family: $SVN-Gotham-Bold;
@@ -868,19 +1028,23 @@ button {
                 // font-size: 40px;
                 margin-bottom: 1.042vw;
                 font-size: 2.083vw;
+
                 @media (max-width: 767px) {
                     font-size: 5vw;
                 }
             }
+
             .percent {
                 color: #e1eaf3;
                 font-family: $SVN-Gotham-Bold;
                 // font-size: 160px;
                 font-size: 8.333vw;
+
                 @media (max-width: 767px) {
                     font-size: 10vw;
                 }
             }
+
             .detail {
                 color: #e1eaf3;
                 font-family: $SVN-Gotham-Book;
@@ -901,12 +1065,14 @@ button {
     height: 42.552vw;
     position: relative;
     width: 100%;
-    background: url(../assets/images/block4_bg.jpg);
+    background: url('../assets/images/block4_bg.jpg');
     background-size: 100% 100%;
     @include flex_center;
+
     &__container {
         max-width: 85%;
         margin: 0 auto;
+
         @media (max-width: 767px) {
             max-width: 100%;
         }
@@ -917,40 +1083,50 @@ button {
     font-family: $SVN-Gotham-Regular;
     color: #091829;
     background-color: #eaeaea;
+
     a {
         color: inherit;
     }
+
     &__container {
         @include flexbox;
         max-width: 85%;
         margin: 0 auto;
         // padding: 100px 0;
         padding: 5.208vw 0;
+
         @media (max-width: 767px) {
             @include flex-direction(column);
         }
     }
+
     &__wrap {
         width: 50%;
+
         @media (max-width: 767px) {
             width: 100%;
         }
     }
+
     &__left {
         // font-size: 25px;
         font-size: 1.302vw;
         line-height: normal;
+
         @media (max-width: 767px) {
             font-size: 3.5vw;
         }
     }
+
     &__right {
         // max-width: 465px;
         width: 24.219vw;
         margin: 0 auto;
+
         @media (max-width: 767px) {
             width: 80vw;
         }
+
         &-title {
             font-family: $UTMCenturBold;
             text-align: center;
@@ -966,6 +1142,7 @@ button {
             }
         }
     }
+
     &__logo {
         // max-width: 560px;
         // margin-bottom: 40px;
@@ -983,17 +1160,21 @@ button {
             display: block;
         }
     }
+
     &__contact {
         // margin-bottom: 40px;
         margin-bottom: 2.083vw;
+
         .d-flex {
             @media (max-width: 767px) {
                 @include flex-wrap(wrap);
             }
         }
     }
+
     &__address {
         @include flexbox;
+
         @media (max-width: 767px) {
             @include flex-direction(column);
         }
@@ -1002,6 +1183,7 @@ button {
             &:first-child {
                 // margin-right: 50px;
                 margin-right: 2.604vw;
+
                 @media (max-width: 767px) {
                     margin-bottom: 3vw;
                     margin-right: 0;
@@ -1009,12 +1191,14 @@ button {
             }
         }
     }
-    &__form {
-    }
+
+    &__form {}
+
     &__form-group {
         // margin-bottom: 15px;
         margin-bottom: 0.781vw;
     }
+
     &__form-control {
         border: none;
         background-color: transparent;
@@ -1026,15 +1210,18 @@ button {
         outline: none;
         box-shadow: none;
         width: 100%;
+
         @media (max-width: 767px) {
             padding-left: 2.5vw;
             font-size: 3.5vw;
             height: 9.125vw;
         }
     }
+
     &__button {
         // margin-top: 50px;
         margin-top: 2.604vw;
+
         @media (max-width: 767px) {
             margin-top: 4vw;
         }

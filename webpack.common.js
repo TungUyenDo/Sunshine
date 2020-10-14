@@ -76,7 +76,7 @@ module.exports = {
                 loader: "url-loader",
                 options: {
                     limit: 8192,
-                    name: "/assets/images/[name].[ext]",
+                    name: "../assets/images/[name].[ext]",
                 },
             },],
         },
@@ -104,11 +104,11 @@ module.exports = {
         }),
         ...generateHtmlPlugins(),
     ],
-    optimization: {
-        minimize: true,
-        minimizer: [
-            new CssMinimizerPlugin(),
-        ],
-    },
+    // optimization: {
+    //     minimize: true,
+    //     minimizer: [
+    //         new CssMinimizerPlugin(),
+    //     ],
+    // },
     // .concat(htmlPlugins),
 };
