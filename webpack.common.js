@@ -7,16 +7,18 @@ const {
 } = require("clean-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 const globImporter = require("node-sass-glob-importer");
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+
 
 const generateHtmlPlugins = () =>
     glob.sync("./src/views/pages/*.twig").map(
         (dir) =>
-        new HtmlWebpackPlugin({
-            filename: path.basename(dir).replace(".twig", ".html"), // Output
-            template: dir, // Input
-            title: "Custom template using Handlebars",
-            chunks: true,
-        })
+            new HtmlWebpackPlugin({
+                filename: path.basename(dir).replace(".twig", ".html"), // Output
+                template: dir, // Input
+                title: "Custom template using Handlebars",
+                chunks: true,
+            })
     );
 
 module.exports = {
@@ -32,50 +34,52 @@ module.exports = {
     },
     module: {
         rules: [{
-                test: /\.twig$/,
-                use: [
-                    "raw-loader",
-                    {
-                        loader: "twig-html-loader",
-                        options: {
-                            data: {},
-                        },
-                    },
-                ],
-            },
-            {
-                test: /\.(scss|css)$/,
-                use: [
-                    MiniCssExtractPlugin.loader,
-                    {
-                        loader: "css-loader",
-                        options: {},
-                    },
-                    {
-                        loader: "sass-loader",
-                        options: {
-                            sassOptions: {
-                                importer: globImporter(),
-                            },
-                        },
-                    },
-                ],
-            },
-
-            {
-                test: /\.(woff|woff2|ttf|otf|eot|svg)(\?v=[a-z0-9]\.[a-z0-9]\.[a-z0-9])?$/,
-                loader: "url-loader?name=assets/fonts/[name].[ext]",
-            },
-            {
-                test: /\.(png|jpg|gif)$/,
-                use: [{
-                    loader: "url-loader",
+            test: /\.twig$/,
+            use: [
+                "raw-loader",
+                {
+                    loader: "twig-html-loader",
                     options: {
-                        limit: 8192,
-                        name: "/assets/images/[name].[ext]",
+                        data: {},
                     },
-                }, ],
-            },
+                },
+            ],
+        },
+        {
+            test: /\.(scss|css)$/,
+            use: [
+                {
+                    loader: MiniCssExtractPlugin.loader
+                },
+                {
+                    loader: "css-loader",
+                    options: {},
+                },
+                {
+                    loader: "sass-loader",
+                    options: {
+                        sassOptions: {
+                            importer: globImporter(),
+                        },
+                    },
+                },
+            ],
+        },
+
+        {
+            test: /\.(woff|woff2|ttf|otf|eot|svg)(\?v=[a-z0-9]\.[a-z0-9]\.[a-z0-9])?$/,
+            loader: "url-loader?name=assets/fonts/[name].[ext]",
+        },
+        {
+            test: /\.(png|jpg|gif)$/,
+            use: [{
+                loader: "url-loader",
+                options: {
+                    limit: 8192,
+                    name: "/assets/images/[name].[ext]",
+                },
+            },],
+        },
         ],
     },
     plugins: [
@@ -85,20 +89,26 @@ module.exports = {
         }),
         new CopyPlugin({
             patterns: [{
-                    from: "src/assets/libs",
-                    to: "assets/libs"
-                },
-                {
-                    from: "src/assets/images",
-                    to: "assets/images"
-                },
-                {
-                    from: "src/js",
-                    to: "js"
-                },
+                from: "src/assets/libs",
+                to: "assets/libs"
+            },
+            {
+                from: "src/assets/images",
+                to: "assets/images"
+            },
+            {
+                from: "src/js",
+                to: "js"
+            },
             ],
         }),
         ...generateHtmlPlugins(),
     ],
+    optimization: {
+        minimize: true,
+        minimizer: [
+            new CssMinimizerPlugin(),
+        ],
+    },
     // .concat(htmlPlugins),
 };
