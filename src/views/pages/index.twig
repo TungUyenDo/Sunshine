@@ -34,6 +34,8 @@
 		<a name="Vị trí & Tiện ích" link="position" href="#position">Vị trí & Tiện ích</a>
 		<a name="CSBH" link="csbh" href="#csbh">CSBH</a>
 	</div>
+
+	{# block1 #}
 	<section class="block1 home" id="home">
 		<div class="block1__container">
 			<figure class="block1__heading">
@@ -59,7 +61,7 @@
 						<input class="block1__form-control block1Note" name="note" type="text" placeholder="Ghi chú yêu cầu">
 					</div>
 					<div class="block1__form-button text-center wow fadeInUp">
-						<button class="btn-submit" type="submit">
+						<button class="btn-submit submit-form" type="submit" disabled="disabled">
 							Đăng ký
 						</button>
 					</div>
@@ -67,6 +69,8 @@
 			</form>
 		</div>
 	</section>
+
+	{# block_intro #}
 	<section class="block_intro">
 		<div class="block_intro__container">
 			<div class="text">
@@ -81,6 +85,8 @@
 			<button class="btn-arrow">đăng ký trải nghiệm</button>
 		</div>
 	</section>
+
+	{# block2 #}
 	<section class="block2 position" id="position">
 		<div class="block2__container">
 			<div class="big_heading">
@@ -132,6 +138,8 @@
 			</div>
 		</div>
 	</section>
+
+	{# block3 #}
 	<section class="block3 csbh" id="csbh">
 		<div class="block3__container">
 			<div class="big_heading">
@@ -172,11 +180,15 @@
 			</div>
 		</div>
 	</section>
+
+	{# block4 #}
 	<section class="block4">
 		<div class="block4__container">
 			<img src="../../assets/images/block4_text.png" alt="SUNSHINE CRYSTAL RIVER BIỂU TƯỢNG THƯỢNG LƯU ĐẲNG CẤP NHẤT SUNSHINE CIPUTRA">
 		</div>
 	</section>
+
+	{# block5 #}
 	<section class="block5">
 		<div class="block5__container">
 			<div class="block5__wrap block5__left">
@@ -246,7 +258,7 @@
 							<input class="block5__form-control block5Note" name="note" type="text" placeholder="Ghi chú nhu cầu">
 						</div>
 						<div class="block5__button text-center">
-							<button class="btn-submit" type="submit" disabled="disabled">
+							<button class="btn-submit  submit-form" type="submit" disabled="disabled">
 								Đăng ký
 							</button>
 						</div>
@@ -256,7 +268,7 @@
 		</div>
 	</section>
 
-	{# add active on show  #}
+	{# nhớ thêm active để show  #}
 	<div class="message">
 		<div class="message__content text-center">
 			<div class="message__title">Bạn đã đăng ký tư vấn thành công.</div>
@@ -264,8 +276,8 @@
 		</div>
 	</div>
 
-	{# add active on show  #}
-	<div class="loading active">
+	{#  nhớ thêm active để show  #}
+	<div class="loading">
 		<img src="../../assets/images/loading.gif">
 	</div>
 

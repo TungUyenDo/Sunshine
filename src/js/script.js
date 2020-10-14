@@ -13,24 +13,11 @@ var MainScript = (function () {
     var _init = function () {
         self.Block1ValidateForm();
         self.Block5ValidateForm();
-        self.Block2();
+        self.Block2Slider();
         self.Menu();
-        self.OPENMENU();
+        self.OpenMenu();
     }
     var _resize = function () { }
-
-    this.Block2 = function () {
-        if ($(".block2__slider").length === 0) {
-            return false
-        }
-
-        $(".block2__slider").slick({
-            arrows: true,
-            dots: false,
-            autoplay: false,
-            autoplaySpeed: 3000
-        });
-    }
 
     this.Block1ValidateForm = function () {
         var form = [{
@@ -67,6 +54,19 @@ var MainScript = (function () {
         }];
         var $submit = '.block5__button button';
         validateForm($submit, form);
+    }
+
+    this.Block2Slider = function () {
+        if ($(".block2__slider").length === 0) {
+            return false
+        }
+
+        $(".block2__slider").slick({
+            arrows: true,
+            dots: false,
+            autoplay: false,
+            autoplaySpeed: 3000
+        });
     }
 
     this.Menu = function () {
@@ -117,7 +117,7 @@ var MainScript = (function () {
         }
     }
 
-    this.OPENMENU = function () {
+    this.OpenMenu = function () {
         $('.menu__text').click(function () {
             if ($('.menu__text_toggle').hasClass('active')) {
                 $('.menu__text_toggle').removeClass('active')
@@ -128,8 +128,6 @@ var MainScript = (function () {
             }
         })
     }
-
-
     /**
      * Validate form
      * @param {{name,validators}[]} form

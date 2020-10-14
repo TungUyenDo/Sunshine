@@ -27,6 +27,10 @@
             $('.popup-news').removeClass("active");
         })
 
+        $('.message .btn-submit').click(function (event) {
+            $('.message').removeClass("active");
+        })
+
         $('form').submit(function (event) {
             event.preventDefault();
             $(".submit-form").prop('disabled', true);
