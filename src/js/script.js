@@ -80,14 +80,11 @@ var MainScript = (function () {
                 $(this).addClass('active')
             }
 
-            // $('.menu__dots_circle a').removeClass('active');
-            // $('.menu__dots_circle a[link="' + $(this).attr('link') + '"]').addClass('active')
+            goToByScroll($(this).attr('link'));
 
             let name = $(this).attr('name');
             $('.menu__dots_text').text(name)
-
-
-            goToByScroll($(this).attr('link'));
+            
         })
 
 
@@ -104,10 +101,11 @@ var MainScript = (function () {
             $('.menu__absolute a').removeClass('active');
             $('.menu__absolute a[link="' + $(this).attr('link') + '"]').addClass('active')
 
+            goToByScroll($(this).attr('link'));
+
             let name = $(this).attr('name');
             $('.menu__dots_text').text(name)
-
-            goToByScroll($(this).attr('link'));
+            
         })
 
         function goToByScroll(echo) {
