@@ -1,25 +1,85 @@
-@import '../assets/fonts/UTM_centur_bold/UTMCenturBold.css';
-@import '../assets/fonts/UTM_centur_bold_italic/UTMCenturBoldItalic.css';
-@import '../assets/fonts/UTM_centur_italic/UTMCenturItalic.css';
-@import '../assets/fonts/UTM_centur_regular/UTMCentur.css';
+@font-face {
+    font-family: "UTMCenturBold";
+    src: url("../assets/fonts/UTMCenturBold.eot");
+    src: url("../assets/fonts/UTMCenturBold.eot") format("embedded-opentype"), url("../assets/fonts/UTMCenturBold.woff2") format("woff2"),
+        url("../assets/fonts/UTMCenturBold.woff") format("woff"), url("../assets/fonts/UTMCenturBold.ttf") format("truetype"),
+        url("../assets/fonts/UTMCenturBold.svg#UTMCenturBold") format("svg");
+}
 
-$UTMCentur: "UTMCentur";
-$UTMCenturBold: "UTMCenturBold";
-$UTMCenturItalic: "UTMCenturItalic";
-$UTMCenturBoldItalic: "UTMCenturBoldItalic";
+@font-face {
+    font-family: 'UTMCentur';
+    src: url('../assets/fonts/UTMCentur.eot');
+    src: url('../assets/fonts/UTMCentur.eot') format('embedded-opentype'),
+        url('../assets/fonts/UTMCentur.woff2') format('woff2'),
+        url('../assets/fonts/UTMCentur.woff') format('woff'),
+        url('../assets/fonts/UTMCentur.ttf') format('truetype'),
+        url('../assets/fonts/UTMCentur.svg#UTMCentur') format('svg');
+}
 
-///
+///=====================================================================================================
 
-@import '../assets/fonts/SVN-Gotham-Black/styles.css';
-@import '../assets/fonts/SVN-Gotham-Bold/styles.css';
-@import '../assets/fonts/SVN-Gotham-Book/styles.css';
-@import '../assets/fonts/SVN-Gotham-Italic/styles.css';
-@import '../assets/fonts/SVN-Gotham-Light/styles.css';
-@import '../assets/fonts/SVN-Gotham-Regular/styles.css';
+@font-face {
+    font-family: "SVN-Gotham-Black";
+    src: url("../assets/fonts/SVN-Gotham-Black.eot?#iefix") format("embedded-opentype"),
+      url("../assets/fonts/SVN-Gotham-Black.otf") format("opentype"), 
+      url("../assets/fonts/SVN-Gotham-Black.woff") format("woff"),
+      url("../assets/fonts/SVN-Gotham-Black.ttf") format("truetype"), 
+      url("../assets/fonts/SVN-Gotham-Black.svg#SVN-Gotham-Black") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+  
+@font-face {
+    font-family: "SVN-Gotham-Bold";
+    src: url("../assets/fonts/SVN-Gotham-Bold.eot?#iefix") format("embedded-opentype"), 
+        url("../assets/fonts/SVN-Gotham-Bold.woff") format("woff"),
+        url("../assets/fonts/SVN-Gotham-Bold.ttf") format("truetype"), 
+        url("../assets/fonts/SVN-Gotham-Bold.svg#SVN-Gotham-Bold") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+  
+@font-face {
+    font-family: 'SVN-Gotham-Book';
+    src: 
+    url('../assets/fonts/SVN-Gotham-Book.eot') format('embedded-opentype'), 
+        url('../assets/fonts/SVN-Gotham-Book.otf') format('opentype'),
+        url('../assets/fonts/SVN-Gotham-Book.woff') format('woff'), 
+        url('../assets/fonts/SVN-Gotham-Book.ttf') format('truetype'), 
+        url('../assets/fonts/SVN-Gotham-Book.svg#SVN-Gotham-Book') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SVN-Gotham-Light';
+    src: url('../assets/fonts/SVN-Gotham-Light.eot?#iefix') format('embedded-opentype'),
+        url('../assets/fonts/SVN-Gotham-Light.woff') format('woff'), 
+        url('../assets/fonts/SVN-Gotham-Light.ttf') format('truetype'), 
+        url('../assets/fonts/SVN-Gotham-Light.svg#SVN-Gotham-Light') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SVN-Gotham';
+    src: url('../assets/fonts/SVN-Gotham.eot?#iefix') format('embedded-opentype'), 
+        url('../assets/fonts/SVN-Gotham.otf') format('opentype'),
+        url('../assets/fonts/SVN-Gotham.woff') format('woff'), 
+        url('../assets/fonts/SVN-Gotham.ttf') format('truetype'), 
+        url('../assets/fonts/SVN-Gotham.svg#SVN-Gotham') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
 
 $SVN-Gotham-Black: "SVN-Gotham-Black";
 $SVN-Gotham-Bold: "SVN-Gotham-Bold";
-$SVN-Gotham-Italic: "SVN-Gotham-Italic";
+// $SVN-Gotham-Italic: "SVN-Gotham-Italic";
 $SVN-Gotham-Light: "SVN-Gotham-Light";
 $SVN-Gotham-Regular: "SVN-Gotham";
 $SVN-Gotham-Book: "SVN-Gotham-Book";
+
+
+$UTMCentur: "UTMCentur";
+$UTMCenturBold: "UTMCenturBold";
+// $UTMCenturItalic: "UTMCenturItalic";
+// $UTMCenturBoldItalic: "UTMCenturBoldItalic";

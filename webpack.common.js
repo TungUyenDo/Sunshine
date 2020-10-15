@@ -65,17 +65,26 @@ module.exports = {
                 },
             ],
         },
-
         {
-            test: /\.(woff|woff2|ttf|otf|eot|svg)(\?v=[a-z0-9]\.[a-z0-9]\.[a-z0-9])?$/,
-            loader: "url-loader?name=assets/fonts/[name].[ext]",
+            test: /\.(woff|woff2|ttf|otf|eot|svg)?$/,
+            use: [
+                {
+                    loader: 'file-loader',
+                    options: {
+                        limit: false,
+                        name: '[name].[ext]',
+                        outputPath: '../assets/fonts/'
+                    }
+                }
+            ]
         },
+
         {
             test: /\.(png|jpg|gif)$/,
             use: [{
                 loader: "url-loader",
                 options: {
-                    limit: 8192,
+                    limit: false,
                     name: "../assets/images/[name].[ext]",
                 },
             },],
@@ -85,7 +94,7 @@ module.exports = {
     plugins: [
         // new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
-            filename: "css/[name].css",
+            filename: "./css/[name].css",
         }),
         new CopyPlugin({
             patterns: [{
@@ -95,6 +104,10 @@ module.exports = {
             {
                 from: "src/assets/images",
                 to: "assets/images"
+            },
+            {
+                from: "src/assets/fonts",
+                to: "assets/fonts"
             },
             {
                 from: "src/js",

@@ -36,6 +36,7 @@ button {
     @media (max-width: 767px) {
         left: 35px;
         bottom: 35px;
+        display: none;
     }
 
     &__item {
@@ -46,7 +47,7 @@ button {
         margin: 0.625vw 0;
         background-position: center center;
         background-size: cover;
-        background-image: url('../assets/images/social_bg.png');
+        background-image: url("../assets/images/social_bg.png");
 
         @media (max-width: 767px) {
             width: 12vw;
@@ -56,7 +57,7 @@ button {
 
         &:hover {
             img {
-                @include transform(scale(0.85))
+                @include transform(scale(0.85));
             }
         }
 
@@ -125,7 +126,7 @@ button {
 }
 
 .btn-submit {
-    background-image: url('../assets/images/btn-submit-yellow.png');
+    background-image: url("../assets/images/btn-submit-yellow.png");
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position-x: -1px;
@@ -159,7 +160,7 @@ button {
     }
 
     &:hover {
-        background-image: url('../assets/images/btn-submit-white.png');
+        background-image: url("../assets/images/btn-submit-white.png");
     }
 }
 
@@ -275,18 +276,27 @@ button {
     padding: 1.04167vw;
     background: rgba(255, 255, 255, 0.8);
     display: none;
+    @media (max-width: 767px) {
+        max-width: 400px;
+        width: 60vw;
+        padding: 2vw;
+    }
 
     &.active {
         display: block;
     }
 
-    &__content {}
+    &__content {
+    }
 
     &__title {
         font-size: 1.65vw;
         color: #3f4d6e;
         text-align: center;
         font-family: $SVN-Gotham-Bold;
+        @media (max-width: 767px) {
+            font-size: 4vw;
+        }
     }
 
     .btn-submit {
@@ -351,7 +361,7 @@ button {
         content: "";
         width: 50%;
         height: 100%;
-        background-image: url('../assets/images/menu_bg.png');
+        background-image: url("../assets/images/menu_bg.png");
         background-size: 100% auto;
         background-position: right center;
         position: absolute;
@@ -529,7 +539,7 @@ button {
             content: "";
             width: 50%;
             height: 100%;
-            background-image: url('../assets/images/menu_bg.png');
+            background-image: url("../assets/images/menu_bg.png");
             background-size: 100% auto;
             background-position: right center;
             position: absolute;
@@ -587,7 +597,7 @@ button {
     position: relative;
     height: 56.25vw;
     width: 100%;
-    background: url('../assets/images/block1_bg.jpg');
+    background: url("../assets/images/block1_bg.jpg");
     background-size: 100% 100%;
 
     @media (max-width: 767px) {
@@ -680,7 +690,7 @@ button {
     height: 37.865vw;
     position: relative;
     width: 100%;
-    background: url('../assets/images/block_intro.jpg');
+    background: url("../assets/images/block_intro.jpg");
     background-size: 100% 100%;
     background-repeat: no-repeat;
     margin-bottom: -1vw;
@@ -728,7 +738,7 @@ button {
     // height: 128.229vw;
     position: relative;
     width: 100%;
-    background: url('../assets/images/block2_bg.jpg');
+    background: url("../assets/images/block2_bg.jpg");
     background-size: 100% 100%;
     color: #e1eaf3;
     font-family: $SVN-Gotham-Book;
@@ -939,7 +949,7 @@ button {
     height: 44.906vw;
     position: relative;
     width: 100%;
-    background: url('../assets/images/block3_bg.jpg');
+    background: url("../assets/images/block3_bg.jpg");
     background-size: 100% 100%;
 
     @media (max-width: 767px) {
@@ -1065,7 +1075,7 @@ button {
     height: 42.552vw;
     position: relative;
     width: 100%;
-    background: url('../assets/images/block4_bg.jpg');
+    background: url("../assets/images/block4_bg.jpg");
     background-size: 100% 100%;
     @include flex_center;
 
@@ -1192,7 +1202,8 @@ button {
         }
     }
 
-    &__form {}
+    &__form {
+    }
 
     &__form-group {
         // margin-bottom: 15px;
