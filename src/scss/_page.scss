@@ -24,7 +24,105 @@ button {
         box-shadow: none;
     }
 }
+.popup {
+    .modal-content {
+        border: 0;
+        border-radius: 0;
+    }
+    .modal-body {
+        padding: 0;
+    }
+    .modal-dialog {
+        width: 56.771vw;
+        max-width: 100%;
+        height: 96%;
+        margin-top: 0;
+        margin-left: auto;
+        margin-right: auto;
+        @include flex_center;
+        @media (max-width: 767px) {
+            width: 80%;
+        }
+    }
+    &__content {
+        @include flexbox;
+        @media (max-width: 767px) {
+            @include flex-direction(column);
+        }
+    }
+    &__wrap {
+        &.left {
+            width: 51.376%;
+            @media (max-width: 767px) {
+                display: none;
+            }
+        }
+        &.right {
+            flex: 1;
+            background-color: #efd5b1;
+            padding: 1.823vw;
+            @include flex_center;
+            @include flex-direction(column);
+            @media (max-width: 767px) {
+                padding: 4.823vw;
+            }
+        }
+    }
+    &__title {
+        font-family: $UTMCenturBold;
+        text-align: center;
+        line-height: 1.3;
+        margin-bottom: 1.342vw;
+        font-size: 1.3vw;
+        color: #1d315d;
 
+        @media (max-width: 767px) {
+            font-size: 4vw;
+            margin-top: 7vw;
+            margin-bottom: 3vw;
+        }
+    }
+    &__form,
+    form {
+        width: 100%;
+    }
+    &__form-group {
+        margin-bottom: 0.781vw;
+
+        @media (max-width: 767px) {
+            margin-bottom: 2.302vw;
+        }
+    }
+
+    &__form-control {
+        width: 100%;
+        background: #ffffff73;
+        outline: none;
+        border: none;
+
+        height: 3.125vw;
+        border-radius: 0.521vw;
+
+        @media (max-width: 767px) {
+            height: 9.125vw;
+        }
+    }
+    .close {
+        opacity: 1;
+        position: absolute;
+        font-family: $SVN-Gotham-Book;
+        font-size: 1.667vw;
+        right: 1.042vw;
+        top: 1.042vw;
+        color: #1d315d;
+        cursor: pointer;
+        @media (max-width: 767px) {
+            font-size: 5.667vw;
+            right: 3.042vw;
+            top: 3.042vw;
+        }
+    }
+}
 .social {
     @include flexbox;
     @include flex-direction(column);
@@ -794,7 +892,7 @@ button {
 
             @media (max-width: 767px) {
                 text-align: left;
-            }  
+            }
 
             *:not(img) {
                 // margin-left: 150px;
@@ -805,7 +903,7 @@ button {
                     margin-bottom: 2vw;
                 }
             }
-        }  
+        }
 
         .right {
             // margin-top: 70px;
