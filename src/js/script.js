@@ -11,6 +11,7 @@ var MainScript = (function () {
     var REX_URL = new RegExp(/^(?:(?:https?|ftp):\/\/)(?:\S+(?::\S*)?@)?(?:(?!10(?:\.\d{1,3}){3})(?!127(?:\.​\d{1,3}){3})(?!169\.254(?:\.\d{1,3}){2})(?!192\.168(?:\.\d{1,3}){2})(?!172\.(?:1[​6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1​,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00​a1-\uffff0-9]+-?)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]+-?)*[a-z\u​00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})))(?::\d{2,5})?(?:\/[^\s]*)?$/i);
 
     var _init = function () {
+        self.PopupValidateForm();
         self.Block1ValidateForm();
         self.Block5ValidateForm();
         self.Block2Slider();
@@ -18,6 +19,26 @@ var MainScript = (function () {
         self.OpenMenu();
     }
     var _resize = function () { }
+
+    this.PopupValidateForm = function () {
+        var form = [{
+            name: '.PopupName',
+            validators: ['required']
+        }, {
+            name: '.PopupPhone',
+            validators: ['required', 'isNumber', 'minLength', 'maxLength'],
+            minLength: 10,
+            maxLength: 10,
+        }, {
+            name: '.PopupEmail',
+            validators: ['required']
+        }, {
+            name: '.PopupNote',
+            validators: []
+        }]
+        var $submit = ".popup__button button";
+        validateForm($submit, form);
+    }
 
     this.Block1ValidateForm = function () {
         var form = [{
