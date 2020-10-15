@@ -32,8 +32,8 @@
         "webpack-merge": "^4.2.2"
     },
     "scripts": {
-        "start": "webpack-dev-server --config webpack.common.js --open",
-        "build": "webpack --config webpack.common.js",
+        "start": "webpack-dev-server --config webpack.common.js --open --mode development",
+        "build": "webpack --config webpack.prod.js --mode production",
         "clean": "rimraf dist"
     },
     "author": "UyenDo",

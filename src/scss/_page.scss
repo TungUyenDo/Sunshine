@@ -794,7 +794,7 @@ button {
 
             @media (max-width: 767px) {
                 text-align: left;
-            }
+            }  
 
             *:not(img) {
                 // margin-left: 150px;
@@ -805,7 +805,7 @@ button {
                     margin-bottom: 2vw;
                 }
             }
-        }
+        }  
 
         .right {
             // margin-top: 70px;
@@ -839,7 +839,9 @@ button {
                 // padding-left: 36px;
                 margin-bottom: 0.417vw;
                 padding-left: 1.875vw;
-
+                @media (max-width: 767px) {
+                    padding-left: 5vw !important;
+                }
                 &::before {
                     position: absolute;
                     content: "";
@@ -853,6 +855,10 @@ button {
                     top: 0.365vw;
                     height: 1.146vw;
                     width: 1.146vw;
+                    @media (max-width: 767px) {
+                        height: 3.146vw;
+                        width: 3.146vw;
+                    }
                 }
             }
         }

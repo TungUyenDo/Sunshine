@@ -66,7 +66,7 @@ module.exports = {
             ],
         },
         {
-            test: /\.(woff|woff2|ttf|otf|eot|svg)?$/,
+            test: /\.(woff|woff2|ttf|otf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
             use: [
                 {
                     loader: 'file-loader',
@@ -117,11 +117,11 @@ module.exports = {
         }),
         ...generateHtmlPlugins(),
     ],
-    // optimization: {
-    //     minimize: true,
-    //     minimizer: [
-    //         new CssMinimizerPlugin(),
-    //     ],
-    // },
+    optimization: {
+        minimize: true,
+        minimizer: [
+            new CssMinimizerPlugin(),
+        ],
+    },
     // .concat(htmlPlugins),
 };
