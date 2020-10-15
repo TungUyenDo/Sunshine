@@ -72,8 +72,11 @@ module.exports = {
                     loader: 'file-loader',
                     options: {
                         limit: false,
+                        // name: '[name].[ext]',
+                        // outputPath: '../assets/fonts/'
                         name: '[name].[ext]',
-                        outputPath: '../assets/fonts/'
+                        outputPath: "assets/fonts",
+                        publicPath: '../assets/fonts'
                     }
                 }
             ]
@@ -85,7 +88,10 @@ module.exports = {
                 loader: "url-loader",
                 options: {
                     limit: false,
-                    name: "../assets/images/[name].[ext]",
+                    // name: "../assets/images/[name].[ext]",
+                    name: "[name].[ext]",
+                    outputPath: "assets/images",
+                    publicPath: '../assets/images'
                 },
             },],
         },
@@ -105,10 +111,10 @@ module.exports = {
                 from: "src/assets/images",
                 to: "assets/images"
             },
-            {
-                from: "src/assets/fonts",
-                to: "assets/fonts"
-            },
+            // {
+            //     from: "src/assets/fonts",
+            //     to: "assets/fonts"
+            // },
             {
                 from: "src/js",
                 to: "js"
