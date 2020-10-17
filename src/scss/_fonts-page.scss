@@ -72,6 +72,17 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'TrajanProBold';
+    src: url('../assets/fonts/TrajanProBold.eot') format('embedded-opentype'),
+        url('../assets/fonts/TrajanProBold.otf') format('opentype'),
+        url('../assets/fonts/TrajanProBold.woff') format('woff'),
+        url('../assets/fonts/TrajanProBold.ttf') format('truetype'),
+        url('../assets/fonts/TrajanProBold.svg#TrajanProBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
 $SVN-Gotham-Black: "SVN-Gotham-Black";
 $SVN-Gotham-Bold: "SVN-Gotham-Bold";
 // $SVN-Gotham-Italic: "SVN-Gotham-Italic";
@@ -84,3 +95,6 @@ $UTMCentur: "UTMCentur";
 $UTMCenturBold: "UTMCenturBold";
 // $UTMCenturItalic: "UTMCenturItalic";
 // $UTMCenturBoldItalic: "UTMCenturBoldItalic";
+
+
+$TrajanProBold: "TrajanProBold";
