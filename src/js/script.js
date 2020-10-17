@@ -15,10 +15,18 @@ var MainScript = (function () {
         self.Block1ValidateForm();
         self.Block5ValidateForm();
         self.Block2Slider();
+        self.Block8Slider();
+        self.Block6Slider();
         self.Menu();
         self.OpenMenu();
     }
     var _resize = function () { }
+
+    this.PopupValidateForm = function () {
+        $('a[data-toggle="pill"]').on('shown.bs.tab', function (e) {
+            $(".block6__slider").slick("resize");
+        })
+    }
 
     this.PopupValidateForm = function () {
         var form = [{
@@ -90,6 +98,51 @@ var MainScript = (function () {
         });
     }
 
+    this.Block8Slider = function () {
+        if ($(".block8__slider").length === 0) {
+            return false
+        }
+
+        $(".block8__slider").slick({
+            arrows: true,
+            dots: false,
+            autoplay: false,
+            autoplaySpeed: 3000,
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            infinite: true,
+            responsive: [
+                {
+                    breakpoint: 992,
+                    settings: {
+                        slidesToShow: 2,
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                    }
+                }
+            ]
+        });
+    }
+
+    this.Block6Slider = function () {
+        if ($(".block6__slider").length === 0) {
+            return false
+        }
+
+        $(".block6__slider").slick({
+            arrows: false,
+            dots: true,
+            autoplay: true,
+            autoplaySpeed: 3000,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+        });
+    }
+
     this.Menu = function () {
         $('.menu__absolute a').click(function (e) {
             e.preventDefault();
@@ -105,7 +158,7 @@ var MainScript = (function () {
 
             let name = $(this).attr('name');
             $('.menu__dots_text').text(name)
-            
+
         })
 
 
@@ -126,12 +179,12 @@ var MainScript = (function () {
 
             let name = $(this).attr('name');
             $('.menu__dots_text').text(name)
-            
+
         })
 
         function goToByScroll(echo) {
             $('html,body').animate({
-                scrollTop: $("." + echo).offset().top
+                scrollTop: $("." + echo).offset().top - 50
             }, 'slow');
         }
     }
@@ -243,7 +296,7 @@ $(window).on('scroll', function () {
     var cur_pos = $(this).scrollTop();
 
     sections.each(function () {
-        var top = $(this).offset().top - nav_height,
+        var top = $(this).offset().top - nav_height - 80,
             bottom = top + $(this).outerHeight();
 
         if (cur_pos >= top && cur_pos <= bottom) {
@@ -254,9 +307,9 @@ $(window).on('scroll', function () {
             $(this).addClass('active');
             nav.find('a[href="#' + $(this).attr('id') + '"]').addClass('active');
             nav_text.find('a[href="#' + $(this).attr('id') + '"]').addClass('active');
-        
+
             let id = $(this).attr('id');
-            let value = $('.menu__dots_circle a[link="'+ id +'"]').attr('name')
+            let value = $('.menu__dots_circle a[link="' + id + '"]').attr('name')
 
             $('.menu__dots_text').text(value)
 
