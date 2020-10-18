@@ -119,9 +119,19 @@ var MainScript = (function () {
                     }
                 },
                 {
+                    breakpoint: 767,
+                    settings: {
+                        slidesToShow: 2,
+                        arrows: false,
+                        dots: true
+                    }
+                },
+                {
                     breakpoint: 480,
                     settings: {
                         slidesToShow: 1,
+                        arrows: false,
+                        dots: true
                     }
                 }
             ]
