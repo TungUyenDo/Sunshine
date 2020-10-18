@@ -193,13 +193,7 @@
         }
 
         .left {
-            text-align: right;
-
-            @media (max-width: 767px) {
-                text-align: left;
-            }
-
-            *:not(img) {
+            .content {
                 // margin-left: 150px;
                 margin-left: 7.813vw;
 
@@ -214,14 +208,10 @@
             // margin-top: 70px;
             margin-top: 3.646vw;
             text-align: left;
+            padding-right: 7.813vw;
 
-            * {
-                // padding-right: 150px;
-                padding-right: 7.813vw;
-
-                @media (max-width: 767px) {
-                    padding: 0;
-                }
+            @media (max-width: 767px) {
+                padding: 0;
             }
 
             .btn-submit {
@@ -1089,6 +1079,7 @@
         border-radius: 0.521vw;
         overflow: hidden;
         position: relative;
+        cursor: pointer;
 
         &::before {
             position: absolute;

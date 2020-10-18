@@ -177,6 +177,8 @@ button {
         border-radius: 0;
         background-color: #efd5b1;
         padding: 2.083vw 1.042vw 1.563vw 2.604vw;
+        height: 90vh;
+        overflow-y: auto;
 
         @media (max-width: 767px) {
             padding: 10.083vw 3.042vw 7.563vw 3.604vw;
@@ -230,6 +232,9 @@ button {
         line-height: normal;
         font-size: 1.771vw;
         margin-bottom: 0.781vw;
+        max-width: 85%;
+        margin-left: auto;
+        margin-right: auto;
 
         @media (max-width: 767px) {
             font-size: 4.5vw;
